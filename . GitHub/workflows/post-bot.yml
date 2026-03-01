@@ -2,9 +2,8 @@ name: Telegram Auto Poster
 
 on:
   schedule:
-    # Запуск 3 раза в день: в 8:00, 14:00 и 20:00 UTC
     - cron: '0 8,14,20 * * *'
-  workflow_dispatch:  # Возможность ручного запуска
+  workflow_dispatch:
 
 jobs:
   post-to-telegram:
@@ -29,3 +28,4 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python main.py
+```
